@@ -12,4 +12,5 @@ public class Customer {
         this.age = age;
         this.personalNumber = personalNumber;
     }
+
 }
