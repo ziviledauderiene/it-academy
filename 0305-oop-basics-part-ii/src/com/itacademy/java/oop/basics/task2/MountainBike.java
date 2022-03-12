@@ -1,28 +1,35 @@
 package com.itacademy.java.oop.basics.task2;
 
 public class MountainBike implements Bicycle {
-    int gear;
-    int speed;
+    private int gear;
+    private int speed;
 
     @Override
     public void changeGear(int newGear) {
         if (newGear == 1) {
-            if (this.gear + newGear > 20) {
-                System.out.println("Gear is too high. Please use opposite value (-1).");
-            } else {
-                this.gear += newGear;
-                System.out.println("Gear is increasing, current value: " + this.gear);
-            }
+            increasingGear(newGear);
         } else if (newGear == -1) {
-            if (this.gear + newGear < 0) {
-                System.out.println("Gear is too low. Please use opposite value (1).");
-            } else {
-                this.gear += newGear;
-                System.out.println("Gear is decreasing, current value: " + this.gear);
-            }
-        }
-        else {
+            decreasingGear(newGear);
+        } else {
             System.out.println("This gear value is not allowed. Please use 1 or -1.");
+        }
+    }
+
+    private void increasingGear(int newGear) {
+        if (this.gear + newGear > 20) {
+            System.out.println("Gear is too high. Please use opposite value (-1).");
+        } else {
+            this.gear += newGear;
+            System.out.println("Gear is increasing, current value: " + this.gear);
+        }
+    }
+
+    private void decreasingGear(int newGear) {
+        if (this.gear + newGear < 0) {
+            System.out.println("Gear is too low. Please use opposite value (1).");
+        } else {
+            this.gear += newGear;
+            System.out.println("Gear is decreasing, current value: " + this.gear);
         }
     }
 

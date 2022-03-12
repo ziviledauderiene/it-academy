@@ -1,8 +1,8 @@
 package com.itacademy.java.oop.basics.task2;
 
 public class RoadBike implements Bicycle {
-    int gear;
-    int speed;
+    private int gear;
+    private int speed;
 
     @Override
     public void changeGear(int newGear) {
